@@ -63,7 +63,7 @@ From this example, you can learn the following:
 
 To get response info you can use this properties
 ```php
-$response = $api->accounts($accountResponse->values['id']))
+$response = $api->accounts($accountId)
 	->users()
 	->send();
 
@@ -85,11 +85,18 @@ print_R($response->values);
 
 Into response values you can access by __get property like:
 ```php
-$user = $api->accounts($accountId)
-	->users($userId)
-	->get();
-
+$user = $api->accounts($accountId)->users($userId)->get();
 echo $user->id; // show user id
 echo $user->values['id']; // show user id
 echo $user->getValue('id'); // show user id
+```
+
+But dont forget, returned values is array, so respect it like in this example ($user['id'], not $user->id):
+
+```php
+$response = $api->accounts($accountId)->users()->send();
+foreach($response->records as $user) {
+	// do something with $user, e.g. delete user
+	$api->accounts($accountId)->users($user['id'])->delete();
+}
 ```
