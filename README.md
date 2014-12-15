@@ -17,40 +17,49 @@ $api = new Smartsupp\Rest\Api(YOUR_API_KEY);
 
 // create account
 $accountResponse = $api->accounts()
-  ->create(array(
-    'title' => 'My account',
-	  'lang' => 'cs'
-  ));
+	->create(array(
+  		'title' => 'My account',
+		'lang' => 'cs'
+	));
+	
+// get accounts list
+$accountListResponse = $api->accounts()
+	->send();
+echo $response->code; // 200
+print_R($response->values); // array(0=>array('id'=>123, 'title'=>'My account', 'lang'=>'cs', 'accountKey'=>'xxxxxxxx'), 1=>array(), ...)
 
 // create user in account
 $userResponse = $api->accounts($accountResponse->values['id'])
-  ->users()
-  ->create(array(
+	->users()
+	->create(array(
 		'fullname' => 'Test Create',
 		'nickname' => 'Nick name',
 		'password' => 'pass1234',
 		'email' => 'john.doe.create@tester.loc',
 		'lang' => 'en'
-  ));
+	));
 
 // update user in account  
 $api->accounts($accountResponse->values['id']))
-  ->users($userResponse->values['id']))
-  ->update(array(
-    'nickname' => 'John Doe'
-  ));
+	->users($userResponse->values['id']))
+	->update(array(
+		'nickname' => 'John Doe'
+	));
 
 // get user in account  
 $response = $api->accounts($accountResponse->values['id']))
-  ->users($userResponse->values['id']))
-  ->get();
+	->users($userResponse->values['id']))
+	->get();
 echo $response->code; // 200
 echo $response->values['nickname']; // John doe
+print_R($response->values); // array('id'=>123, 'nickname'=>'John Doe', 'role'=>'agent',...);
 
 // get list of users in account
 $response = $api->accounts($accountResponse->values['id']))
-  ->users()
-  ->send();
+	->users()
+	->send();
+echo $response->code; // 200
+print_R($response->values); // array(0=>array('id'=>123, 'nickname'=>'John Doe', 'role'=>'agent',...), 1=>array(), ...)
 ```
 
 From this example, you can learn the following:
