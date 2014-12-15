@@ -2,6 +2,9 @@
 
 namespace Smartsupp\Rest;
 
+require_once 'Request.php';
+require_once 'Response.php';
+
 class Api
 {
 

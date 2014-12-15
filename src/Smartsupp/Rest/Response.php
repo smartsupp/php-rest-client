@@ -21,4 +21,39 @@ class Response
 		$this->values = $values;
 	}
 
+
+	/**
+	 * @return int
+	 */
+	public function getCode() {
+		return $this->code;
+	}
+
+
+	/**
+	 * @return array
+	 */
+	public function getValues() {
+		return $this->values;
+	}
+
+
+	/**
+	 * @param $name
+	 * @param mixed $default
+	 * @return mixed
+	 */
+	public function getValue($name, $default = NULL) {
+		return array_key_exists($name, $this->values) ? $this->values[$name] : $default;
+	}
+
+
+	/**
+	 * @param $name
+	 * @return mixed
+	 */
+	public function __get($name) {
+		return $this->getValue($name);
+	}
+
 }
