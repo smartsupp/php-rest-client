@@ -27,7 +27,7 @@ $accountResponse = $api->accounts()
 	));
 
 // create user in account
-$userResponse = $api->accounts($accountResponse->values['id'])
+$userResponse = $api->accounts($accountResponse->id)
 	->users()
 	->create(array(
 		'fullname' => 'Test Create',
@@ -38,19 +38,19 @@ $userResponse = $api->accounts($accountResponse->values['id'])
 	));
 
 // update user in account
-$userUpdateResponse = $api->accounts($accountResponse->values['id'])
-	->users($userResponse->values['id'])
+$userUpdateResponse = $api->accounts($accountResponse->id)
+	->users($userResponse->id)
 	->update(array(
 		'nickname' => 'John Doe'
 	));
 
 // get user in account  
-$userGetResponse = $api->accounts($accountResponse->values['id'])
-	->users($userResponse->values['id']))
+$userGetResponse = $api->accounts($accountResponse->id)
+	->users($userResponse->id))
 	->get();
 
 // get list of users in account
-$usersListResponse = $api->accounts($accountResponse->values['id'])
+$usersListResponse = $api->accounts($accountResponse->id)
 	->users()
 	->send();
 ```
