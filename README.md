@@ -60,8 +60,12 @@ From this example, you can learn the following:
 * If you want to works with resources you should pass resource ID as parameter.
 * Allowed methods are: "get", "update", "create", "delete", "send"
 * Every response has code and values
+* Every api call returns **response** objects with **code** and **values**
+
+## Access to response
 
 To get response info you can use this properties
+
 ```php
 $response = $api->accounts($accountId)
 	->users()
