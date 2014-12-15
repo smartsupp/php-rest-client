@@ -6,7 +6,7 @@ php-rest-client
 This is simple REST api wraper for smartsuppp writen in PHP. It has intuitive design to do create, delete, update and get operations with smartsupp resources.
 
 * [More info about Smartsupp REST API](http://developers.smartsupp.com/rest/) This is get started doc for REST API, you should understand how it works
-* [Resources REST API documentation](http://doc.smartsupp.com/) This is documnentation for resources. PHP wrapper generates all kind of rest requests by intuitive fluent style.
+* [Resources REST API documentation](http://doc.smartsupp.com/) This is documnentation of the Smartsupp Resources. PHP wrapper generates all kind of REST requests by intuitive fluent style.
 
 ## Get Started
 
