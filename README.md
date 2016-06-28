@@ -1,6 +1,4 @@
-# Smartsupp PHP REST client
-
-## Introduction
+# Smartsupp REST API PHP client
 
 This is a simple Smartsupp REST API wraper writen in PHP. It has intuitive design to create, delete, update and get resources.
 
