@@ -3,7 +3,7 @@
 This is a simple Smartsupp REST API wraper writen in PHP. It has intuitive design to create, delete, update and get resources.
 
 * https://www.smartsupp.com/
-* [More info about Smartsupp REST API](http://developers.smartsupp.com/rest/) This is "Get Started" doc for REST API, you should understand how it works.
+* [More info about Smartsupp REST API](http://developers.smartsupp.com/docs/rest/) This is "Get Started" doc for REST API, you should understand how it works.
 * [Resources REST API documentation](http://doc.smartsupp.com/) This is documnentation of the Smartsupp Resources. PHP wrapper generates all kind of REST requests by intuitive fluent style.
 
 ## Get Started
